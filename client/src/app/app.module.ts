@@ -9,14 +9,24 @@ import { NavComponent } from './nav/nav.component';
 import { FormsModule } from '@angular/forms';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { HomeComponent } from './home/home.component';
-import { RegisterComponent } from './register/register.component';  // copied from https://valor-software.com/ngx-bootstrap/#/components/dropdowns?tab=api
+import { RegisterComponent } from './register/register.component';
+import { MemberListComponent } from './members/member-list/member-list.component';
+import { MemberDetailComponent } from './members/member-detail/member-detail.component';
+import { ListsComponent } from './lists/lists.component';
+import { MessagesComponent } from './messages/messages.component';  // copied from https://valor-software.com/ngx-bootstrap/#/components/dropdowns?tab=api
+import { ToastrModule } from 'ngx-toastr';
+import { SharedModule } from './_modules/shared.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     HomeComponent,
-    RegisterComponent
+    RegisterComponent,
+    MemberListComponent,
+    MemberDetailComponent,
+    ListsComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +34,12 @@ import { RegisterComponent } from './register/register.component';  // copied fr
     HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
-    BsDropdownModule.forRoot()  // copied from https://valor-software.com/ngx-bootstrap/#/components/dropdowns?tab=api
+    
+    // BsDropdownModule.forRoot(),  // copied from https://valor-software.com/ngx-bootstrap/#/components/dropdowns?tab=api
+    // ToastrModule.forRoot({
+    //   positionClass: 'toast-bottom-right'
+    // })
+    SharedModule             // import { SharedModule } from './_modules/shared.module';
   ],
   providers: [],
   bootstrap: [AppComponent]
